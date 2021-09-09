@@ -4,6 +4,7 @@ node_js:
 install:
   - npm install -g ionic
   - npm install -g @angular/cli
+  - npm install
 script:
 - echo "Hello world Travis!"
 - ionic build
