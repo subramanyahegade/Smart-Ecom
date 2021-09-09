@@ -1,3 +1,2 @@
-"# Smart-Ecom" 
-"# Smart-Ecom" 
-"# Smart-Ecom" 
+# Smart Ecom
+This is an application about Smart Ecommerce
