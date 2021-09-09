@@ -3,6 +3,7 @@ node_js:
   - "14.16.1"
 install:
   - npm install -g ionic
+  - npm install -g @angular/cli
 script:
 - echo "Hello world Travis!"
 - ionic build
