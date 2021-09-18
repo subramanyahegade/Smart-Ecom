@@ -1,0 +1,35 @@
+/* DOES NOT WORK - not specific enough */
+.action-sheet-group {
+    background: #e5e5e5;
+  }
+  
+  /* Works - pass "my-custom-class" in cssClass to increase specificity */
+  .my-custom-class .action-sheet-group {
+    background: #e5e5e5;
+  }
+  .bottom{
+    position: absolute;
+    bottom: 80px;
+  }
+  .container {
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100vh;
+    display: flex;
+  }
+  .container .btn-holder {
+    justify-content: center;
+    display: flex;
+  }
+.stiky{
+  position: fixed;
+  bottom: 80px;
+  width: 100%;
+  left: 0px;
+}
+::ng-deep .action-sheet-group.sc-ion-action-sheet-md:last-child {
+  padding-bottom: 0;
+  bottom: 56px;
+  position: absolute;
+  width: 100%;
+}
