@@ -13,16 +13,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SearchbarComponent } from 'src/app/searchbar/searchbar.component';
 import { CategoryComponent } from 'src/app/category/category.component';
-
+import { ServicesService } from 'src/app/services.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent,ExpandableComponent,FooterComponent,SearchbarComponent,CategoryComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,HttpClientModule],
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy},
+    ServicesService
   ],
   exports: [
     ExpandableComponent,

@@ -41,13 +41,13 @@
             <app-searchbar></app-searchbar>
             <!-- <app-dynamic></app-dynamic> -->
             <ion-content>
-                <ion-card (click)="expandItem(item)" *ngFor="let item of items">
+                <ion-card (click)="expandItem(item)" *ngFor="let item of categoryData">
                   <ion-card-header>
                     <ion-card-title>
-                      {{item.title}}
+                      {{item.categoryName}}
                       <ion-icon class="ion-float-right" name="caret-down-outline">
                       </ion-icon> 
-                      <b>({{item.count}})</b>
+                      <b>({{item.productCount}})</b>
                     </ion-card-title>
                   </ion-card-header>
                   <ion-card-content>

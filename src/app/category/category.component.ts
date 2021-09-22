@@ -1,15 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { ActionSheetController } from '@ionic/angular';
+import { ServicesService } from 'src/app/services.service';
+
 @Component({
   selector: 'app-category',
   templateUrl: './category.component.html',
   styleUrls: ['./category.component.scss'],
 })
 export class CategoryComponent implements OnInit {
+  categoryData:any = [];
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.api.getCategory().subscribe(data=>{
+      console.log(data);
+      this.categoryData = data.data;
+    },err=>{
+      console.log(err);
+    })
+  }
 
-  constructor(public actionSheetController: ActionSheetController) {}
+  constructor(public actionSheetController: ActionSheetController,public api: ServicesService) {}
   
     async presentActionSheet() {
       const actionSheet = await this.actionSheetController.create({
