@@ -1,3 +1,4 @@
+import { CardComponent } from './card/card.component';
 import { FooterComponent } from './footer/footer.component';
 import { ExpandableComponent } from './expandable/expandable.component';
 
@@ -17,7 +18,7 @@ import { ServicesService } from 'src/app/services.service';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [AppComponent,ExpandableComponent,FooterComponent,SearchbarComponent,CategoryComponent],
+  declarations: [AppComponent,ExpandableComponent,FooterComponent,SearchbarComponent,CategoryComponent,CardComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,HttpClientModule],
   providers: [
