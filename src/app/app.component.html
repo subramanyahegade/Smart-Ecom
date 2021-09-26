@@ -10,13 +10,31 @@
         <ion-content>
           <ion-list>
             <ion-list-header>
-               list header
+               
             </ion-list-header>
             <ion-menu-toggle [autoHide]="false">
               <ion-item button>
-                <ion-icon slot="start" name='home'></ion-icon>
+                <ion-icon slot="start" name='home-outline'></ion-icon>
                 <ion-label>
                   Home
+                </ion-label>
+              </ion-item>
+              <ion-item button>
+                <ion-icon slot="start" name='pricetags-outline'></ion-icon>
+                <ion-label>
+                  Orders
+                </ion-label>
+              </ion-item>
+              <ion-item button>
+                <ion-icon slot="start" name='wallet-outline'></ion-icon>
+                <ion-label>
+                  Wallet
+                </ion-label>
+              </ion-item>
+              <ion-item button>
+                <ion-icon slot="start" name='log-out-outline'></ion-icon>
+                <ion-label>
+                  Logout
                 </ion-label>
               </ion-item>
             </ion-menu-toggle>
@@ -42,19 +60,52 @@
             <!-- <app-dynamic></app-dynamic> -->
             <ion-content>
                 <ion-card (click)="expandItem(item)" *ngFor="let item of categoryData">
-                  <ion-card-header>
-                    <ion-card-title>
-                      {{item.categoryName}}
-                      <ion-icon class="ion-float-right" name="caret-down-outline">
-                      </ion-icon> 
-                      <b>({{item.productCount}})</b>
-                    </ion-card-title>
-                  </ion-card-header>
-                  <ion-card-content>
-                    <app-expandable [expanded]="item.expanded">
+                  
+                      <ion-item lines="none">
+                        <ion-thumbnail slot="start">
+                        
+                          <ion-img [src]="item.imgURL"></ion-img>
+                        </ion-thumbnail>
+                        <ion-label>
+                          <ion-text color="primary">
+                            <h3>{{item.categoryName}}</h3>
+                          </ion-text>
+                          <ion-text color="secondary">
+                            <h6>{{item.productCount}} items</h6>
+                          </ion-text>
+                         
+                         </ion-label>
+                          <ion-icon class="ion-float-right" name="chevron-down-outline"> </ion-icon> 
+                      </ion-item>
+                      
+                    
+                     
+                     
+                 
+                 
+                    <app-expandable [expanded]="item.expanded" >
                       <app-card></app-card>
+                      <ion-card >
+                
+                        <ion-item lines="none" *ngFor="let product of item.products"> 
+                          <ion-thumbnail slot="start">
+                            <ion-img [src]="product.filepath"></ion-img>
+                          </ion-thumbnail>
+                          <ion-label>
+                            <ion-text color="primary">
+                              <h3>{{product.productName}}</h3>
+                            </ion-text>
+                            <ion-text color="secondary">
+                              <h6>₹ {{product.price}} </h6>
+                            </ion-text>
+                            <ion-button class="ion-float-right">Add</ion-button>
+                           </ion-label>
+                           
+                        </ion-item>
+                        
+                  </ion-card>
                     </app-expandable>
-                  </ion-card-content>
+                 
                 </ion-card>
             </ion-content>
             <app-category></app-category>
