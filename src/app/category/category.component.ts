@@ -23,7 +23,7 @@ export class CategoryComponent implements OnInit {
   
     async presentActionSheet() {
       const actionSheet = await this.actionSheetController.create({
-        header: 'Albums',
+        header: 'Categories',
         cssClass: 'my-custom-class',
         buttons: [{
           text: 'Category1',
